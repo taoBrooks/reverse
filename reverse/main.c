@@ -8,11 +8,27 @@
 
 #include <stdio.h>
 
+void reverse(char *str){
+    char *end = str;
+    char temp;
+    if(str){
+        while (*end) {
+            ++end;
+        }
+        --end;
+    while(str < end){
+        temp = *str;
+        *str++ = *end;
+        *end-- = temp;
+        }
+    }
+}
 int main(int argc, const char * argv[])
 {
-
-    // insert code here...
-    printf("Hello, World!\n");
+    char str[] = "helloworld";
+    reverse(str);
+    printf("%s\n",str);
+    
     return 0;
 }
 
